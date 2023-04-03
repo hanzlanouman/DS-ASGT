@@ -66,10 +66,13 @@ public class Person {
             System.out.println("List is empty");
         } else {
             Patient p = head;
-            while (p.next.data != key) {
+            Patient x = head;
+            while (p.data != key) {
+                x = p;
                 p = p.next;
+
             }
-            p.next = p.next.next;
+            x.next = p.next;
         }
     }
 

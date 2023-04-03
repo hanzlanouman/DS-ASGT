@@ -8,6 +8,9 @@ public class ListAccess {
         Person.insertAtEnd(14);
         Person.insertAtStart(15);
         Person.insertAfter(19, 12);
+//        Person.deleteAtStart();
+//        Person.deleteAtEnd();
+        Person.delete(13);
         Person.display();
     }
 }
