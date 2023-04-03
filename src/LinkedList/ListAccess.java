@@ -2,7 +2,7 @@ package LinkedList;
 
 public class ListAccess {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Person.insertAtEnd(12);
         Person.insertAtEnd(13);
         Person.insertAtEnd(14);

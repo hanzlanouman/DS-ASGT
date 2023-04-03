@@ -17,7 +17,7 @@ public class MergeSort {
 
 
         long end = (System.nanoTime() - start) / 1000000;
-        System.out.println("Time taken for bubbleSort " + end + " ms");
+        System.out.println("Time taken for MergeSort " + end + " ms");
 
 //        BubbleSort.printArray(arr);
     }

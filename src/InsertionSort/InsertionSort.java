@@ -8,12 +8,13 @@ public class InsertionSort {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * (arr.length - 1));
         }
+
         long startTime = System.nanoTime();
 
         insertionSort(arr);
 
         long end = (System.nanoTime() - startTime) / 1000000;
-        System.out.println("Time taken for Selection sort " + end + " ms" + "( " + (double) end / 1000 + " s)");
+        System.out.println("Time taken for Insertion sort " + end + " ms" + "( " + (double) end / 1000 + " s)");
 
 //        for (int x : arr) {
 //            System.out.println(x);

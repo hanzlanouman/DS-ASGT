@@ -32,9 +32,9 @@ public class BubbleSort {
 
         sort(arr);
 
+//        printArray(arr);
         long end = (System.nanoTime() - start) / 1000000;
         System.out.println("Time taken for bubbleSort " + end + " ms" + "\t (" + end / 1000 + "s)");
-//        printArray(arr);
     }
 }
 
