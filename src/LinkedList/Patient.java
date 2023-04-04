@@ -1,30 +1,44 @@
 package LinkedList;
 
-public class Patient {
-    int data;
-    Patient next;
+public class Patient extends Person {
 
-    Patient(int data) {
-        this.data = data;
-        next = null;
+    private int id;
+    private String disease;
+    private String treatment;
+
+    Patient(int id, String disease, String treatment, int cnic, String name, int age, String address) {
+        super(cnic, name, age, address);
+        this.id = id;
+        this.disease = disease;
+        this.treatment = treatment;
     }
 
-    //write set and get methods for data and next
-    public int getData() {
-        return data;
+    public int getId() {
+        return id;
     }
 
-    public void setData(int data) {
-        this.data = data;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Patient getNext() {
-        return next;
+    public String getDisease() {
+        return disease;
     }
 
-    public void setNext(Patient next) {
-        this.next = next;
+    public void setDisease(String disease) {
+        this.disease = disease;
     }
 
+    public String getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(String treatment) {
+        this.treatment = treatment;
+    }
+
+    public String toString() {
+        return "ID: " + id + " Disease: " + disease + " Treatment: " + treatment + " CNIC: " + getCnic() + " Name: " + getName() + " Age: " + getAge() + " Address: " + getAddress();
+    }
 
 }
