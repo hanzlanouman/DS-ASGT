@@ -8,5 +8,8 @@ public class Node {
         this.p = p;
         this.next = null;
     }
-    
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
 }

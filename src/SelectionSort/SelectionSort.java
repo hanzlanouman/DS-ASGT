@@ -2,7 +2,6 @@ package SelectionSort;
 
 public class SelectionSort {
 
-
     public static void main(String[] args) {
 //        int arr[] = {2, 6, 1, 9, 4, 3, 0, 5};
         int[] arr = new int[100000];

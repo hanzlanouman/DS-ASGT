@@ -62,7 +62,9 @@ public class LinkedList {
         } else {
             Node currNode = head;
             Node prevNode = head;
-            while (currNode.p.getId() != key) {
+
+            while (currNode.p.id != key) {
+//                System.out.println("22");
                 prevNode = currNode;
                 currNode = currNode.next;
             }

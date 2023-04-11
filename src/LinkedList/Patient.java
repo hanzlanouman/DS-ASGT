@@ -2,7 +2,7 @@ package LinkedList;
 
 public class Patient extends Person {
 
-    private int id;
+    public int id;
     private String disease;
     private String treatment;
 
@@ -40,5 +40,4 @@ public class Patient extends Person {
     public String toString() {
         return "ID: " + id + " Disease: " + disease + " Treatment: " + treatment + " CNIC: " + getCnic() + " Name: " + getName() + " Age: " + getAge() + " Address: " + getAddress();
     }
-
 }
