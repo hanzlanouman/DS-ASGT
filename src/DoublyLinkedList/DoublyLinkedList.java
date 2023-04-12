@@ -1,9 +1,9 @@
 package DoublyLinkedList;
 
 public class DoublyLinkedList {
-    private Node head;
-    private Node tail;
-    private int size;
+    private static Node head;
+    private static Node tail;
+    private static int size;
 
     public DoublyLinkedList() {
         this.head = null;
@@ -11,7 +11,7 @@ public class DoublyLinkedList {
         this.size = 0;
     }
 
-    public void insertAtStart(int data) {
+    public static void insertAtStart(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -24,7 +24,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public void insertAtLast(int data) {
+    public static void insertAtLast(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -37,29 +37,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public void add(int data, int index) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index out of bounds");
-        }
-        if (index == 0) {
-            insertAtStart(data);
-        } else if (index == size) {
-            insertAtLast(data);
-        } else {
-            Node newNode = new Node(data);
-            Node current = head;
-            for (int i = 0; i < index - 1; i++) {
-                current = current.getNext();
-            }
-            newNode.setNext(current.getNext());
-            current.getNext().setPrevious(newNode);
-            current.setNext(newNode);
-            newNode.setPrevious(current);
-            size++;
-        }
-    }
-
-    public void deleteFirst() {
+    public static void deleteFirst() {
         if (head == null) {
             throw new NullPointerException("List is empty");
         }
@@ -73,7 +51,7 @@ public class DoublyLinkedList {
         size--;
     }
 
-    public void deleteAtLast() {
+    public static void deleteLast() {
         if (head == null) {
             throw new NullPointerException("List is empty");
         }
@@ -87,34 +65,22 @@ public class DoublyLinkedList {
         size--;
     }
 
-    public void delete(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index out of bounds");
-        }
-        if (index == 0) {
-            deleteFirst();
-        } else if (index == size - 1) {
-            deleteAtLast();
-        } else {
-            Node current = head;
-            for (int i = 0; i < index - 1; i++) {
-                current = current.getNext();
-            }
-            current.setNext(current.getNext().getNext());
-            current.getNext().setPrevious(current);
-            size--;
-        }
 
-    }
-
-    public void deleteKey(int key) {
+    public static void deleteKey(int key) {
         Node current = head;
         while (current != null) {
             if (current.getData() == key) {
                 if (current == head) {
-                    deleteFirst();
+                    if (head == tail) {
+                        head = null;
+                        tail = null;
+                    } else {
+                        head = head.getNext();
+                        head.setPrevious(null);
+                    }
+                    size--;
                 } else if (current == tail) {
-                    deleteAtLast();
+                    deleteLast();
                 } else {
                     current.getPrevious().setNext(current.getNext());
                     current.getNext().setPrevious(current.getPrevious());
@@ -125,16 +91,16 @@ public class DoublyLinkedList {
         }
     }
 
-    public void printList() {
+    public static void printList() {
         Node current = head;
         while (current != null) {
-            System.out.print(current.getData() + " ");
+            System.out.println(current.getData() + " ");
             current = current.getNext();
         }
-        System.out.println();
+        System.out.println("List Size: " + size);
     }
 
-    public void insertAfter(int data, int key) {
+    public static void insertAfter(int data, int key) {
         Node current = head;
         while (current != null) {
             if (current.getData() == key) {
@@ -148,5 +114,6 @@ public class DoublyLinkedList {
             current = current.getNext();
         }
     }
+
 
 }
