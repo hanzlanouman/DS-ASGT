@@ -45,8 +45,8 @@ public class Queue {
     }
 
     public void display() {
-        for (int i = 0; i < queueArray.length; i++) {
-            System.out.print(queueArray[i] + " ");
+        for (int j : queueArray) {
+            System.out.print(j + " ");
         }
     }
 }
