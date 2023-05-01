@@ -10,5 +10,6 @@ public class StackAccess {
         System.out.println();
         stack1.pop();
         System.out.println(stack1.peek());
+        
     }
 }

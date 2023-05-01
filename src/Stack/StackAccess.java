@@ -11,5 +11,7 @@ public class StackAccess {
         stack1.pop();
         System.out.println(stack1.peek());
 //        stack1.display();
+
+//        Make another stack
     }
 }
