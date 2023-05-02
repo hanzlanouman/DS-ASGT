@@ -1,15 +1,15 @@
 package Stack;
 
 public class Stack {
-    private int[] stack;
+    private String[] stack;
     private int top;
 
     public Stack(int size) {
-        stack = new int[size];
+        stack = new String[size];
         top = -1;
     }
 
-    public void push(int data) {
+    public void push(String data) {
         if (top == stack.length - 1) {
             System.out.println("Stack is full");
         } else {
@@ -17,19 +17,19 @@ public class Stack {
         }
     }
 
-    public int pop() {
+    public String pop() {
         if (top == -1) {
             System.out.println("Stack is empty");
-            return -1;
+            return null;
         } else {
             return stack[top--];
         }
     }
 
-    public int peek() {
+    public String peek() {
         if (top == -1) {
             System.out.println("Stack is empty");
-            return -1;
+            return null;
         } else {
             return stack[top];
         }
