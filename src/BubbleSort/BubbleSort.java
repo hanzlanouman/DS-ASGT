@@ -4,7 +4,7 @@ public class BubbleSort {
 
     public static void sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - 1; j++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -23,7 +23,7 @@ public class BubbleSort {
     public static void main(String[] args) {
 //        int[] arr = {6, 5, 2, 8, 3, 1};
 // Assignment Condition
-        int[] arr = new int[100000];
+        int[] arr = new int[10];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * arr.length - 1);
         }
@@ -32,7 +32,7 @@ public class BubbleSort {
 
         sort(arr);
 
-//        printArray(arr);
+        printArray(arr);
         long end = (System.nanoTime() - start) / 1000000;
         System.out.println("Time taken for bubbleSort " + end + " ms" + "\t (" + end / 1000 + "s)");
     }

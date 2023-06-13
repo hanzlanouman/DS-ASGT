@@ -1,30 +1,31 @@
 package Stack;
 
-import Stack.Stack;
 
-public class InfixToPostfix {
+public class InfixToPrefix {
 
     public static Stack stack = new Stack(20);
 
     public static String convert(String input) {
         String[] tokens = input.split(" ");
-        String output = "";
+        StringBuilder output = new StringBuilder();
 
-        for (String token : tokens) {
-            if (isOperator(token)) {
+        for (int i = tokens.length - 1; i >= 0; i--) {
+            String token = tokens[i];
+
+            if (InfixToPostfix.isOperator(token)) {
                 while (!stack.isEmpty() && !isPriorityHigh(token)) {
-                    output += stack.pop() + " ";
+                    output.insert(0, stack.pop() + " ");
                 }
                 stack.push(token);
             } else {
-                output += token + " ";
+                output.insert(0, token + " ");
             }
         }
 
         while (!stack.isEmpty()) {
-            output += stack.pop() + " ";
+            output.insert(0, stack.pop() + " ");
         }
-        return output.trim();
+        return output.toString().trim();
     }
 
     public static boolean isPriorityHigh(String operator) {
@@ -40,9 +41,5 @@ public class InfixToPostfix {
             case "^" -> 3;
             default -> -1;
         };
-    }
-
-    public static boolean isOperator(String operator) {
-        return operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/") || operator.equals("^");
     }
 }

@@ -15,15 +15,16 @@ public class Queue {
         this.nItems = 0;
     }
 
-    public void insert(int data) {
+    public void enqueue(int data) {
         if (rear == maxSize - 1) {
             rear = -1;
+
         }
         queueArray[++rear] = data;
         nItems++;
     }
 
-    public int remove() {
+    public int dequeue() {
         int temp = queueArray[front++];
         if (front == maxSize) {
             front = 0;
